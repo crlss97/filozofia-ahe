@@ -10,7 +10,7 @@
     </div>
   </div>
   <div class="submit-option-container">
-    <div [className]="selectedOptionIndex ? 'submit-button' : 'submit-button disabled'" (click)="getNextQuestion()">
+    <div [className]="selectedOptionIndex !== undefined ? 'submit-button' : 'submit-button disabled'" (click)="getNextQuestion()">
       {{this.currentQuestion < this.allQuestions.length -1 ? 'Zatwierdź Odpowiedź' : 'Zakończ Quiz'}}
     </div>
   </div>
