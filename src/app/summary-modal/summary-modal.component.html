@@ -1,0 +1,35 @@
+<div class="summary-dialog">
+  <div class="summary-info">
+    <h2>Ilość poprawnych odpowiedzi: {{data.goodAnswers}} na {{data.questions.length}}</h2>
+  </div>
+  <div class="summary-content">
+    <mat-expansion-panel *ngFor="let answer of data.selectedAnswers">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{data.questions[answer.questionNumber].title}}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="question-options">
+        <div [className]="option.option === data.questions[answer.questionNumber].goodAnswer
+        ? 'option good-answer'
+        : index === answer.questionAnswerIndex ? 'option wrong-answer' : 'option'"
+             *ngFor="let option of data.questions[answer.questionNumber].options; let index = index">
+          {{option.option}}
+        </div>
+      </div>
+    </mat-expansion-panel>
+  </div>
+  <div class="summary-footer">
+    <div class="authors">
+      <span>Przygotowali:</span>
+      <span>Karol Zaremba - Grupa D4</span>
+      <span>Amadeusz Ostrowski - Grupa D2</span>
+    </div>
+    <div class="submit-summary">
+      <div class="submit" (click)="onClose()">
+        Ponów Quiz
+      </div>
+    </div>
+    <div class="empty"></div>
+  </div>
+</div>
