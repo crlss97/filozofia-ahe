@@ -1,0 +1,17 @@
+<div class="question-panel">
+  <div class="question-title">
+    <h1>{{question.title}}</h1>
+  </div>
+  <div class="question-options">
+    <div *ngFor="let question of question.options; let index = index"
+         (click)="selectOption(index)"
+         [className]="selectedOptionIndex === index ? 'option selected' : 'option'">
+      {{question.option}}
+    </div>
+  </div>
+  <div class="submit-option-container">
+    <div [className]="selectedOptionIndex ? 'submit-button' : 'submit-button disabled'" (click)="getNextQuestion()">
+      {{this.currentQuestion < this.allQuestions.length -1 ? 'Zatwierdź Odpowiedź' : 'Zakończ Quiz'}}
+    </div>
+  </div>
+</div>

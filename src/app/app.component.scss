@@ -1,0 +1,23 @@
+.app-container {
+  background: linear-gradient(#00ccff, #fff);
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    height: 78vh;
+    position: absolute;
+    z-index: 1;
+
+    &:first-child {
+      left: 27vw;
+    }
+
+    &:last-child {
+      right: 26.5vw;
+    }
+  }
+
+}
